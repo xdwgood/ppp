@@ -24,7 +24,7 @@ extern "C" {
 #endif
 
 #ifndef MAVLINK_MESSAGE_CRCS
-#define MAVLINK_MESSAGE_CRCS {{0, 50, 9, 9, 0, 0, 0}, {300, 217, 22, 22, 0, 0, 0}}
+#define MAVLINK_MESSAGE_CRCS {{300, 217, 22, 22, 0, 0, 0}, {1334, 50, 9, 9, 0, 0, 0}}
 #endif
 
 #include "../protocol.h"
@@ -287,7 +287,6 @@ typedef enum MAV_COMPONENT
    MAV_COMP_ID_GIMBAL6=175, /* Gimbal #6. | */
    MAV_COMP_ID_BATTERY=180, /* Battery #1. | */
    MAV_COMP_ID_BATTERY2=181, /* Battery #2. | */
-   MAV_COMP_ID_MAVCAN=189, /* CAN over MAVLink client. | */
    MAV_COMP_ID_MISSIONPLANNER=190, /* Component that can generate/supply a mission flight plan (e.g. GCS or developer API). | */
    MAV_COMP_ID_ONBOARD_COMPUTER=191, /* Component that lives on the onboard computer (companion computer) and has some generic functionalities, such as settings system parameters and monitoring the status of some processes that don't directly speak mavlink and so on. | */
    MAV_COMP_ID_ONBOARD_COMPUTER2=192, /* Component that lives on the onboard computer (companion computer) and has some generic functionalities, such as settings system parameters and monitoring the status of some processes that don't directly speak mavlink and so on. | */
@@ -335,8 +334,8 @@ typedef enum MAV_COMPONENT
 #define MAVLINK_THIS_XML_IDX 2
 
 #if MAVLINK_THIS_XML_IDX == MAVLINK_PRIMARY_XML_IDX
-# define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_HEARTBEAT, MAVLINK_MESSAGE_INFO_PROTOCOL_VERSION}
-# define MAVLINK_MESSAGE_NAMES {{ "HEARTBEAT", 0 }, { "PROTOCOL_VERSION", 300 }}
+# define MAVLINK_MESSAGE_INFO {MAVLINK_MESSAGE_INFO_PROTOCOL_VERSION, MAVLINK_MESSAGE_INFO_HEARTBEAT}
+# define MAVLINK_MESSAGE_NAMES {{ "HEARTBEAT", 1334 }, { "PROTOCOL_VERSION", 300 }}
 # if MAVLINK_COMMAND_24BIT
 #  include "../mavlink_get_info.h"
 # endif
